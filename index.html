@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090b12"><title>Streamora — Stories worth streaming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">S</span>streamora<span class="brand-dot">.</span></a>
+  <nav><a class="active" href="#home">Home</a><a href="#browse">Explore</a><a href="#browse" data-filter="Movies">Movies</a><a href="#browse" data-filter="Web Series">Series</a></nav>
+  <div class="top-actions"><button class="icon-btn" id="searchToggle" aria-label="Search">⌕</button><button class="login-btn" id="loginOpen">Sign in</button><button class="avatar" id="adminOpen" title="Admin">S</button></div>
+</header>
+<main id="home">
+  <section class="hero" id="hero">
+    <div class="hero-shade"></div><div class="hero-content">
+      <span class="eyebrow"><i></i> STREAMORA ORIGINALS</span>
+      <h1>Stories worth<br><em>staying up for.</em></h1>
+      <p>Discover your next obsession. Blockbusters, binge-worthy series and stories from every corner of the world.</p>
+      <div class="hero-actions"><button class="primary-btn" id="heroPlay">▶ &nbsp; Explore now</button><a class="ghost-btn" href="#browse">＋ &nbsp; Browse collection</a></div>
+      <div class="hero-meta"><span>✦ Curated for you</span><span>•</span><span>New stories every week</span></div>
+    </div><div class="hero-pagination"><b></b><i></i><i></i></div>
+  </section>
+  <section class="browse section" id="browse">
+    <div class="section-head"><div><span class="eyebrow">YOUR NEXT FAVORITE</span><h2>Explore the universe</h2></div><div class="search-wrap" id="searchWrap"><input id="searchInput" placeholder="Search titles..."><span>⌕</span></div></div>
+    <div class="chips" id="chips"></div>
+    <div id="contentRows"><div class="loading">Loading your collection…</div></div>
+  </section>
+  <section class="join-banner"><div><span class="eyebrow">ONE PLACE. ENDLESS STORIES.</span><h2>Your watchlist is<br>waiting for you.</h2><p>Sign in to keep your favorites close and pick up where you left off.</p></div><button class="primary-btn" id="joinBtn">Create free account <span>→</span></button></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-mark">S</span>streamora<span class="brand-dot">.</span></a><span>© 2026 Streamora. All stories, one destination.</span><div><a href="#">About</a><a href="#">Help</a><a href="#">Privacy</a></div></footer>
+<div class="modal hidden" id="authModal"><div class="modal-card"><button class="close" data-close>×</button><span class="eyebrow">WELCOME TO STREAMORA</span><h2 id="authTitle">Sign in</h2><form id="authForm"><input name="email" type="email" placeholder="Email address" required><input name="password" type="password" placeholder="Password (8+ characters)" required><button class="primary-btn full" id="authSubmit">Sign in</button></form><p class="switch-auth" id="authSwitch">New here? <a>Create an account</a></p><p class="form-error" id="authError"></p></div></div>
+<div class="modal hidden" id="playerModal"><div class="player-card"><button class="close" data-close>×</button><div id="playerArea"></div><div class="player-info"><span class="eyebrow">NOW STREAMING</span><h2 id="playerTitle"></h2><p id="playerDesc"></p></div></div></div>
+<div class="modal hidden" id="adminModal"><div class="modal-card admin-card"><button class="close" data-close>×</button><span class="eyebrow">STREAMORA STUDIO</span><h2>Admin dashboard</h2><div id="adminLogin"><p>Sign in with your admin account to manage your library.</p><button class="primary-btn full" id="adminLoginBtn">Sign in as admin</button></div><form id="uploadForm" class="hidden">
+  <label>Title<input name="title" required placeholder="Video title"></label>
+  <div class="form-grid"><label>Category<select name="category"><option>Movies</option><option>Web Series</option><option>Anime</option><option>Bangla Natok</option><option>Live TV</option><option>Short Films</option></select></label><label>Year<input name="year" type="number" value="2026"></label></div>
+  <label>Description<textarea name="description" rows="2" placeholder="A short description"></textarea></label>
+  <label>Video file (MP4/WebM, optional)<input name="video" type="file" accept="video/*"></label>
+  <label>Or video / HLS URL<input name="videoUrl" placeholder="https://… (MP4 or .m3u8)"></label>
+  <label>Poster image file (optional)<input name="posterFile" type="file" accept="image/*"></label>
+  <label>Or poster image URL<input name="poster" placeholder="https://…"></label>
+  <label class="check-label"><input name="featured" type="checkbox"> Feature on homepage</label>
+  <button class="primary-btn full">＋ Add to Streamora</button><p class="form-error" id="uploadError"></p>
+</form><div id="adminList" class="admin-list"></div></div></div>
+<script src="/app.js"></script>
+</body></html>
