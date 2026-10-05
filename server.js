@@ -41,7 +41,7 @@ const upload=multer({storage,limits:{fileSize:1024*1024*1024},fileFilter:(req,fi
 app.use(cors());
 app.use(express.json({limit:"2mb"}));
 app.use("/uploads",express.static(UPLOAD_DIR));
-app.use(express.static(path.join(ROOT,"public")));
+app.use(express.static(ROOT));
 
 app.get("/api/health",(req,res)=>res.json({ok:true,app:"Streamora"}));
 app.get("/api/videos",(req,res)=>{
